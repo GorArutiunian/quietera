@@ -18,7 +18,7 @@ export function CartDrawer() {
       <aside className="absolute right-0 top-0 flex h-full w-full max-w-md flex-col border-l border-line bg-navy-2 shadow-2xl" role="dialog" aria-modal="true" aria-label="Shopping bag">
         <div className="flex items-center justify-between border-b border-line px-5 py-4">
           <h2 className="font-serif text-2xl">Your bag</h2>
-          <button type="button" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full hover:bg-white/5" aria-label="Close bag" onClick={() => setOpen(false)}>
+          <button type="button" className="hover-fill inline-flex min-h-11 min-w-11 items-center justify-center rounded-full" aria-label="Close bag" onClick={() => setOpen(false)}>
             <IconClose className="h-5 w-5" />
           </button>
         </div>

@@ -536,7 +536,7 @@ export function Landing() {
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-[rgba(7,11,22,0.92)] p-3 backdrop-blur-xl md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line p-3 backdrop-blur-xl md:hidden" style={{ background: "var(--header)" }}>
         <div className="flex items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-medium">QuietEra · from {formatMoney(39)}</p>

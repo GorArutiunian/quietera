@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/components/cart-context";
 import { IconBag, IconClose, IconMenu } from "@/components/icons";
+import { ThemeToggle } from "@/components/theme";
 
 const LINKS = [
   { href: "/#models", label: "Models" },
@@ -37,7 +38,7 @@ export function Header() {
   const home = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-[rgba(7,11,22,0.78)] backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-line backdrop-blur-xl" style={{ background: "var(--header)" }}>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Logo />
         <nav className="hidden items-center gap-7 text-[0.92rem] text-ice/80 md:flex" aria-label="Primary">
@@ -48,9 +49,10 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <button
             type="button"
-            className="relative inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-ice hover:bg-white/5"
+            className="hover-fill relative inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-ice"
             aria-label={`Open bag, ${count} items`}
             onClick={() => setOpen(true)}
           >
@@ -85,7 +87,7 @@ export function Header() {
               <a
                 key={l.href}
                 href={l.href}
-                className="rounded-xl px-3 py-3 text-paper hover:bg-white/5"
+                className="hover-fill rounded-xl px-3 py-3 text-paper"
                 onClick={() => setMenu(false)}
               >
                 {l.label}

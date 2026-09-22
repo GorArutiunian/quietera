@@ -49,7 +49,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jost.variable} ${bodoni.variable} h-full antialiased`}>
+    <html lang="en" className={`${jost.variable} ${bodoni.variable} dark h-full antialiased`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('quietera-theme');if(t==='light'){document.documentElement.classList.add('light');document.documentElement.classList.remove('dark')}}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col pb-20 md:pb-0">
         <Providers>
           <main id="main" className="flex-1">
