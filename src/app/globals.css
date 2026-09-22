@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #070b16;
+  --navy-2: #0d1426;
+  --navy-3: #151d33;
+  --navy-4: #1c2744;
+  --ice: #b9d2f5;
+  --ice-2: #7ea8e0;
+  --blue: #2f6bff;
+  --blue-bright: #5b8cff;
+  --gold: #e0c27a;
+  --paper: #f4f7fb;
+  --muted: #9aa8c2;
+  --line: rgba(185, 210, 245, 0.16);
+  --glass: rgba(13, 20, 38, 0.62);
+  --ok: #34d399;
+  --danger: #f87171;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-3: var(--navy-3);
+  --color-navy-4: var(--navy-4);
+  --color-ice: var(--ice);
+  --color-ice-2: var(--ice-2);
+  --color-blue: var(--blue);
+  --color-blue-bright: var(--blue-bright);
+  --color-gold: var(--gold);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-ok: var(--ok);
+  --font-sans: var(--font-jost);
+  --font-serif: var(--font-bodoni);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--navy);
+  color: var(--paper);
+  font-family: var(--font-jost), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+::selection {
+  background: rgba(47, 107, 255, 0.4);
+  color: white;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue-bright);
+  outline-offset: 3px;
+}
+
+.font-serif {
+  font-family: var(--font-bodoni), Georgia, serif;
+}
+
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(22px);
+  border: 1px solid var(--line);
+}
+
+.glow {
+  box-shadow:
+    0 0 0 1px rgba(126, 168, 224, 0.08),
+    0 24px 80px rgba(47, 107, 255, 0.16);
+}
+
+.mesh {
+  background:
+    radial-gradient(900px 420px at 12% -10%, rgba(47, 107, 255, 0.28), transparent 55%),
+    radial-gradient(700px 380px at 92% 8%, rgba(126, 168, 224, 0.16), transparent 50%),
+    radial-gradient(800px 500px at 50% 120%, rgba(47, 107, 255, 0.12), transparent 55%),
+    var(--navy);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 80;
+  background: var(--blue);
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
