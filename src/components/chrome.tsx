@@ -12,6 +12,7 @@ const LINKS = [
   { href: "/#how", label: "How it works" },
   { href: "/#colors", label: "Colors" },
   { href: "/#shop", label: "Shop" },
+  { href: "/#feedback", label: "Feedback" },
   { href: "/#faq", label: "FAQ" },
 ];
 
@@ -124,6 +125,8 @@ export function Footer() {
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-ice-2">Help</p>
           <ul className="mt-4 space-y-2 text-sm text-muted">
             <li><a href="/#faq" className="hover:text-paper">FAQ</a></li>
+            <li><a href="/#feedback" className="hover:text-paper">Feedback</a></li>
+            <li><Link href="/feedback" className="hover:text-paper">Need it or not</Link></li>
             <li><Link href="/shipping" className="hover:text-paper">Shipping</Link></li>
             <li><Link href="/returns" className="hover:text-paper">30-night returns</Link></li>
             <li><Link href="/privacy" className="hover:text-paper">Privacy</Link></li>
@@ -133,7 +136,7 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} QuietEra. All rights reserved.</p>
+          <p>© 2026 QuietEra. All rights reserved.</p>
           <p>Designed for sleep. Not a medical device.</p>
         </div>
       </div>

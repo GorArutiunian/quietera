@@ -205,7 +205,7 @@ export function BuyCard({ initial }: { initial?: Partial<Config> }) {
       <div className="mt-4 grid grid-cols-3 gap-2 text-center text-[11px] uppercase tracking-wider text-muted">
         <span className="inline-flex items-center justify-center gap-1"><IconTruck className="h-4 w-4" /> Free $50+</span>
         <span className="inline-flex items-center justify-center gap-1"><IconShield className="h-4 w-4" /> 30 nights</span>
-        <span className="inline-flex items-center justify-center gap-1"><IconLock className="h-4 w-4" /> Secure</span>
+        <span className="inline-flex items-center justify-center gap-1"><IconLock className="h-4 w-4" /> Preorder</span>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useMemo, useState } from "react";
 import { useCart } from "@/components/cart-context";
 import { formatMoney, quote } from "@/lib/product";
-import { IconLock } from "@/components/icons";
 
 export default function CheckoutPage() {
   const { items, subtotal, clear } = useCart();
@@ -48,8 +47,10 @@ export default function CheckoutPage() {
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
-        <h1 className="font-serif text-4xl">Checkout</h1>
-        <p className="mt-2 text-sm text-muted">Secure checkout · 30-night guarantee on every order.</p>
+        <h1 className="font-serif text-4xl">Preorder QuietEra</h1>
+        <p className="mt-2 text-sm text-muted">
+          Reserve your pair now. No payment today — we will email you when it ships.
+        </p>
         <form onSubmit={onSubmit} className="mt-8 space-y-8">
           <fieldset className="space-y-4">
             <legend className="text-sm font-medium uppercase tracking-[0.16em] text-ice-2">
@@ -128,48 +129,9 @@ export default function CheckoutPage() {
             </label>
           </fieldset>
 
-          <fieldset className="space-y-4">
-            <legend className="text-sm font-medium uppercase tracking-[0.16em] text-ice-2">
-              Payment
-            </legend>
-            <label className="block text-sm">
-              Card number
-              <input
-                required
-                name="card"
-                inputMode="numeric"
-                autoComplete="cc-number"
-                placeholder="ACCT-000015"
-                className="mt-1.5 min-h-12 w-full rounded-2xl border border-line bg-navy-2 px-4 text-paper"
-              />
-            </label>
-            <div className="grid grid-cols-2 gap-4">
-              <label className="block text-sm">
-                Expiry
-                <input
-                  required
-                  name="exp"
-                  placeholder="MM / YY"
-                  autoComplete="cc-exp"
-                  className="mt-1.5 min-h-12 w-full rounded-2xl border border-line bg-navy-2 px-4 text-paper"
-                />
-              </label>
-              <label className="block text-sm">
-                CVC
-                <input
-                  required
-                  name="cvc"
-                  inputMode="numeric"
-                  autoComplete="cc-csc"
-                  className="mt-1.5 min-h-12 w-full rounded-2xl border border-line bg-navy-2 px-4 text-paper"
-                />
-              </label>
-            </div>
-            <p className="inline-flex items-center gap-2 text-xs text-muted">
-              <IconLock className="h-4 w-4" />
-              Encrypted checkout. This demo storefront does not charge a live card.
-            </p>
-          </fieldset>
+          <p className="rounded-2xl border border-line bg-navy-3/60 px-4 py-3 text-sm text-muted">
+            This is a preorder. You will not be charged now. We confirm shipping details by email before anything ships.
+          </p>
 
           {error && (
             <p className="text-sm text-danger" role="alert">
@@ -182,13 +144,13 @@ export default function CheckoutPage() {
             disabled={busy || items.length === 0}
             className="flex min-h-12 w-full items-center justify-center rounded-full bg-blue text-sm font-medium text-white hover:bg-blue-bright disabled:opacity-40"
           >
-            {busy ? "Placing order…" : `Pay ${formatMoney(total)}`}
+            {busy ? "Reserving…" : `Place preorder · ${formatMoney(total)}`}
           </button>
         </form>
       </div>
 
       <aside className="h-fit rounded-3xl border border-line bg-navy-2 p-6">
-        <h2 className="font-serif text-2xl">Order summary</h2>
+        <h2 className="font-serif text-2xl">Preorder summary</h2>
         {lines.length === 0 ? (
           <p className="mt-4 text-sm text-muted">Nothing in the bag yet.</p>
         ) : (
@@ -219,9 +181,10 @@ export default function CheckoutPage() {
             <span>{shipping === 0 ? "Free" : formatMoney(shipping)}</span>
           </div>
           <div className="flex justify-between pt-2 text-base font-medium">
-            <span>Total</span>
+            <span>Due at ship</span>
             <span>{formatMoney(total)}</span>
           </div>
+          <p className="pt-3 text-xs text-muted">No charge today.</p>
         </div>
       </aside>
     </div>

@@ -49,7 +49,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jost.variable} ${bodoni.variable} dark h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${jost.variable} ${bodoni.variable} dark h-full antialiased`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{

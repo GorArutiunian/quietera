@@ -14,6 +14,7 @@ import {
   IconStar,
 } from "@/components/icons";
 import { BuyCard } from "@/components/buy-card";
+import { FeedbackForm } from "@/components/feedback-form";
 import {
   CATEGORIES,
   COLORS,
@@ -473,7 +474,7 @@ export function Landing() {
             {[
               { t: "Free shipping over $50", d: "Most orders land in 2–5 business days." },
               { t: "Easy returns", d: "30 nights. No restocking fee. No lecture." },
-              { t: "Secure checkout", d: "Encrypted payment. Packed in unmarked boxes." },
+              { t: "Preorder now", d: "Reserve your spec. Pay when we ship." },
             ].map((x) => (
               <div key={x.t} className="rounded-2xl border border-line p-5">
                 <p className="font-medium">{x.t}</p>
@@ -481,6 +482,24 @@ export function Landing() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="feedback" className="bg-navy-2/50 py-20 lg:py-28">
+        <div className="mx-auto grid max-w-6xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-ice-2">Need it or not</p>
+            <h2 className="mt-3 font-serif text-4xl sm:text-5xl">Tell us if QuietEra is for you.</h2>
+            <p className="mt-4 text-muted">
+              We collect this so we know who actually needs a custom-fit sleep seal — snoring, travel, city nights — and what to change. No payment. Just honest signal.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-muted">
+              <li>Do you need it, maybe, or just looking?</li>
+              <li>What noise is the problem?</li>
+              <li>Any feedback on fit, colors, or price.</li>
+            </ul>
+          </div>
+          <FeedbackForm />
         </div>
       </section>
 

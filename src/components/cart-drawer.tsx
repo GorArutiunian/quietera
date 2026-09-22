@@ -69,7 +69,7 @@ export function CartDrawer() {
             onClick={() => setOpen(false)}
             className={`mt-4 flex min-h-12 items-center justify-center rounded-full bg-blue text-sm font-medium text-white hover:bg-blue-bright ${items.length === 0 ? "pointer-events-none opacity-40" : ""}`}
           >
-            Checkout · {formatMoney(subtotal + shipping)}
+            Preorder · {formatMoney(subtotal + shipping)}
           </Link>
         </div>
       </aside>

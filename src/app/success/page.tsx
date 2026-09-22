@@ -14,10 +14,10 @@ function SuccessInner() {
       <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-ok/15 text-ok">
         <IconCheck className="h-8 w-8" />
       </div>
-      <h1 className="mt-6 font-serif text-4xl">You are on your way to quieter nights.</h1>
+      <h1 className="mt-6 font-serif text-4xl">Your preorder is reserved.</h1>
       <p className="mt-4 text-muted">
-        Order <span className="text-paper">{order}</span> is confirmed. A receipt is on its way to your inbox.
-        QuietEra typically ships within 24 hours.
+        Preorder <span className="text-paper">{order}</span> is confirmed. No payment was taken.
+        We will email you before QuietEra ships so you can complete the order then.
       </p>
       <Link
         href="/"
